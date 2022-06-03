@@ -8,13 +8,13 @@ const app = express();
 
 const db = require('./config/db');
 db.sequelize.sync().then(() => {
-    console.log('Drop and Resync with { force: true }');
-  });
+  console.log('Drop and Resync with { force: true }');
+});
 app.use(cors());
-app.use(bodyParser.json({limit: "50mb"}));
+app.use(bodyParser.json({ limit: "50mb" }));
 
-app.use('/',fileRouter)
+app.use('/', fileRouter)
 
-app.listen(PORT,()=>{
-console.log("server started ", PORT)
+app.listen(PORT, () => {
+  console.log("server started ", PORT)
 })
